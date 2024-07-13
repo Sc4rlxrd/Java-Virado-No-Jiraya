@@ -1,3 +1,5 @@
+package introducao;
+
 public class Aula05EstruturasCondicionais02 {
     // idade < 15 categoria infantil
     // idade >= 15 && idade <=18 categoria juvenil

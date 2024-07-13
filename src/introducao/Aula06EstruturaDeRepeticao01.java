@@ -1,3 +1,5 @@
+package introducao;
+
 public class Aula06EstruturaDeRepeticao01 {
     public static void main(String[] args) {
         // while , do while, for

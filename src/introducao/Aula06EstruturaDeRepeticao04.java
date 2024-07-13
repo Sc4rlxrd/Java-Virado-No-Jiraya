@@ -1,3 +1,5 @@
+package introducao;
+
 public class Aula06EstruturaDeRepeticao04 {
     public static void main(String[] args) {
         // dado um valor de uma carro quantas vezes pode ser parcelado

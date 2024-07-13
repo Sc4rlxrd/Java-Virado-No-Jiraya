@@ -1,3 +1,5 @@
+package introducao;
+
 public class Aula07Arrays03 {
     public static void main(String[] args) {
         int [] numeros = new int[3]; // forma 01
