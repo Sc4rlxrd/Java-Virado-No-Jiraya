@@ -11,7 +11,7 @@ public class Calculadora {
         System.out.println("Finalizando a conta de menos");
     }
 
-    // pode passar qualquer tipo de parametros, tipo primitivo e tipo refencia como String e arrays
+    // pode passar qualquer tipo de parametros, tipo primitivo e tipo referencia como String e arrays
     public void multiplicaDoisNumeros(int num1, int num2){
         System.out.println(num1*num2);
 
