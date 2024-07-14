@@ -47,4 +47,28 @@ public class Calculadora {
         System.out.println("num2 " + num2);
     }
 
+    public void somaArray(int[] numeros ){
+        int soma = 0;
+        for(int temp: numeros){
+            soma+=temp;
+        }
+        System.out.println(soma);
+    }
+    /*
+            Nao pode ter outro parametro depois o varArgs
+            o jeito de iniciar um varArgs so tem esse  jeito
+            pode usar o VarArgs assim tambem mas o primeiro valor vai ser alocado na primeiro parametro como no exemplo v1
+
+            public void somarVarArgs( double v1 , int... numeros){}
+     */
+    public void somarVarArgs(int... numeros){
+        int soma = 0;
+        for(int temp:numeros){
+            soma+=temp;
+        }
+        System.out.println(soma);
+    }
+
+
+
 }
