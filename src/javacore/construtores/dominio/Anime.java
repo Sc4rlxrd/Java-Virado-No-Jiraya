@@ -9,7 +9,7 @@ public class Anime {
 
     // obs tem duas regras
     // 1: o this de referencia de construtor so pode ser usado dentro do bloco de algum construtor
-    // 2: ele obrigadoriamente precisa ser colocado na primeira linha se causo colocar sout antes do this que o code
+    // 2: ele obrigadoriamente precisa ser colocado na primeira linha se causa colocar sout antes do this que o code
     //construtor nao tem retorno
     // ele sempre vai iniciar na frete de tudo
     public  Anime(String nome, String tipo,int episodios, String genero){
