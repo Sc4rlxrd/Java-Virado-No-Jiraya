@@ -2,6 +2,7 @@ package javacore.polimorfismo.teste;
 
 import javacore.polimorfismo.dominio.Computador;
 import javacore.polimorfismo.dominio.Produto;
+import javacore.polimorfismo.dominio.Televisao;
 import javacore.polimorfismo.dominio.Tomate;
 
 public class ProdutoTest02 {
@@ -15,5 +16,10 @@ public class ProdutoTest02 {
         System.out.println(produto1.getNome());
         System.out.println(produto1.getValor());
         System.out.println(produto1.calcularImposto());
+        System.out.println("===============================");
+        Produto produto2 = new Televisao("Samsung 40 polegadas",3800);
+        System.out.println(produto2.getNome());
+        System.out.println(produto2.getValor());
+        System.out.println(produto2.calcularImposto());
     }
 }
