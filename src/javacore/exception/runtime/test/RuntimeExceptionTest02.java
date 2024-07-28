@@ -1,4 +1,4 @@
-package javacore.exception.exception.test;
+package javacore.exception.runtime.test;
 
 public class RuntimeExceptionTest02 {
     public static void main(String[] args) {
