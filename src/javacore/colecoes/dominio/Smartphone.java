@@ -15,7 +15,6 @@ public class Smartphone {
     // Consistente: x.equals(x) sempre retorna true se x for diferente de null
     // para x diferente de null, x.equals(null) tem que retornar false.
     // this seria x e o parametro obj seria y
-
     @Override
     public boolean equals(Object obj) {
         if(obj == null) return false;
@@ -23,6 +22,16 @@ public class Smartphone {
         if(this.getClass() != obj.getClass()) return false;
         Smartphone smartphone = (Smartphone) obj;
         return serialNumber != null && serialNumber.equals(smartphone.serialNumber);
+    }
+
+    // se x.equals(y) == true, y.hashCode == x.hashCode()
+    // y.hashCode() == x.hashCode() não necessariamente o equals de y.equals(x) tem que ser true.
+    // x.equals(y) == false
+    // y.hashCOde() != x.hashCOde() x.equals(y) deverá ser false.
+    // obs: o mesmo atributo do equals tem que ser usado no hashCode também.
+    @Override
+    public int hashCode() {
+        return  serialNumber == null ? 0 : this.serialNumber.hashCode();
     }
 
     public String getSerialSerial() {
