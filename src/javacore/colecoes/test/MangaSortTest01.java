@@ -4,8 +4,17 @@ import javacore.colecoes.dominio.Manga;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
+class MangaByNameComparator implements Comparator<Manga>{
+    @Override
+    public int compare(Manga manga1, Manga manga2) {
+        return manga1.getNome().compareTo(manga2.getNome());
+
+        // uma forma de comparar sem mudar a classe principal.
+    }
+}
 public class MangaSortTest01 {
     public static void main(String[] args) {
         List<Manga> mangas = new ArrayList<>(6);
@@ -21,6 +30,11 @@ public class MangaSortTest01 {
        }
         System.out.println("--------Ordenando....--------------");
         Collections.sort(mangas);
+        for (Manga manga : mangas) {
+            System.out.println(manga);
+        }
+        System.out.println("--------Ordenando Por nome--------------");
+        Collections.sort(mangas, new MangaByNameComparator());
         for (Manga manga : mangas) {
             System.out.println(manga);
         }
