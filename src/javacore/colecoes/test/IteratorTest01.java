@@ -26,7 +26,7 @@ public class IteratorTest01 {
 //        }
 
         // agora usando a programação funcional
-        mangas.removeIf(manga -> manga.getQuntidade() == 0);
+        mangas.removeIf(manga -> manga.getQuantidade() == 0);
 
         System.out.println(mangas);
     }
