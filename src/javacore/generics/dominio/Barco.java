@@ -8,6 +8,11 @@ public class Barco {
         this.nome = nome;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+
     @Override
     public String toString() {
         return "Barco{" +
