@@ -24,7 +24,7 @@ public class SmartphoneListTest01 {
             smartphones.add(s4);
             System.out.println("Depois de add s4");
             for(Smartphone smartphone: smartphones){
-                System.out.println(STR."Smartphones: \{smartphone}");
+                System.out.println("Smartphones: "+ smartphone);
             }
         }
 

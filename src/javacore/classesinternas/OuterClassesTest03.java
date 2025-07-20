@@ -8,7 +8,7 @@ public class OuterClassesTest03 {
         void print(){
 
             // assim eu consigo acessar o valor na variavel name
-            System.out.println(STR."\{new OuterClassesTest03().name} \{lastName}");
+            System.out.println(new OuterClassesTest03().name +  lastName);
         }
    }
 

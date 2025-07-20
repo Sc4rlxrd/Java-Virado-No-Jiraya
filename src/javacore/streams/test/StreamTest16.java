@@ -14,7 +14,7 @@ public class StreamTest16 {
             4- Custo total da computação N(elementos) e P(processos)
             5- Quantidade de dados se for pequeno não tem necessidade de implementar parallels
             6 - Tipos de coleções como ArrayList é melhor que setList, mas sempre de uma pesquisada sobre qual usar
-            7 - Tamanho da stream se tiver um tamanho pre definido melhor que uma stream que tem auto incremento
+            7 - Tamanho da stream se tiver um tamanho pre definido melhor que uma stream que tem autoincremento
             8 - Cuidado com o processamento do merge
          */
         System.out.println(Runtime.getRuntime().availableProcessors());
@@ -35,35 +35,35 @@ public class StreamTest16 {
             result +=i;
         }
         long end = System.currentTimeMillis();
-        System.out.println(STR."\{result} \{end - init} ms");
+        System.out.println(result + (end - init) +"ms");
     }
     private static void sumStreamIterate(long num){
         System.out.println("Sum Stream Iterate");
         long init =  System.currentTimeMillis();
         long result = Stream.iterate(1L,i->i).limit(num).reduce(0L,Long::sum);
         long end = System.currentTimeMillis();
-        System.out.println(STR."\{result} \{end - init} ms");
+        System.out.println(result + (end - init) +"ms");
     }
     private static void sumParallelStreamIterate(long num){
         System.out.println("Sum Parallel Stream Iterate");
         long init =  System.currentTimeMillis();
         long result = Stream.iterate(1L,i->i).limit(num).parallel().reduce(0L,Long::sum);
         long end = System.currentTimeMillis();
-        System.out.println(STR."\{result} \{end - init} ms");
+        System.out.println(result + (end - init) +"ms");
     }
     private static void sumLongStreamIterate(long num){
         System.out.println("Sum Long Stream Iterate");
         long init = System.currentTimeMillis();
         long result = LongStream.rangeClosed(1L,num).reduce(0L,Long::sum);
         long end = System.currentTimeMillis();
-        System.out.println(STR."\{result} \{end - init} ms");
+        System.out.println(result + (end - init) +"ms");
     }
     private static void sumParallelLongStreamIterate(long num){
         System.out.println("Sum Parallel Long Stream Iterate");
         long init = System.currentTimeMillis();
         long result = LongStream.rangeClosed(1L,num).parallel().reduce(0L,Long::sum);
         long end = System.currentTimeMillis();
-        System.out.println(STR."\{result} \{end - init} ms");
+        System.out.println(result + (end - init) +"ms");
 
     }
 

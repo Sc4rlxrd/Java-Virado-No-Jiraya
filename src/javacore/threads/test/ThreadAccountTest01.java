@@ -31,11 +31,11 @@ public class ThreadAccountTest01 implements Runnable {
     }
     private synchronized void withdrawal (int amount){
         if (account.getBalance()>=amount){
-            System.out.println(STR."\{Thread.currentThread().getName()} está indo sacar dinheiro");
+            System.out.println(Thread.currentThread().getName() + " está indo sacar dinheiro");
             account.withdrawal(amount);
-            System.out.println(STR."\{Thread.currentThread().getName()} completou o saque, o valor atual da conta \{account.getBalance()}");
+            System.out.println(Thread.currentThread().getName() + "completou o saque, o valor atual da conta " + account.getBalance());
         }else {
-            System.out.println(STR."Sem dinheiro para \{Thread.currentThread().getName()} efetuar o saque \{account.getBalance()}");
+            System.out.println("Sem dinheiro para "+Thread.currentThread().getName()+ " efetuar o saque "+ account.getBalance());
         }
     }
 

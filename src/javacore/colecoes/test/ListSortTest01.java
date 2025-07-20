@@ -19,7 +19,7 @@ public class ListSortTest01 {
 
         System.out.println("--------------------------Mangas---------------------------");
         for (String manga:mangas){
-            System.out.println(STR."MANGAS: \{manga}");
+            System.out.println("MANGAS: "+ manga);
         }
 
         List<Double> money = new ArrayList<>(6);
@@ -31,7 +31,7 @@ public class ListSortTest01 {
         Collections.sort(money);
         System.out.println("--------------------------Money---------------------------");
         for (Double moneyOrdering: money){
-            System.out.println(STR."Money: \{moneyOrdering}");
+            System.out.println("Money: "+ moneyOrdering);
         }
 
         new Manga(null,null,0.0);

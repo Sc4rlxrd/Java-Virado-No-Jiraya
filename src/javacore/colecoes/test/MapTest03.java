@@ -27,8 +27,8 @@ public class MapTest03 {
         for(Map.Entry<Consumidor,List<Manga>> entry : consumidorMangaMap.entrySet()){
             System.out.println("Consumidor: " + entry.getKey().getNome());
             for (Manga manga: entry.getValue()){
-                System.out.println(STR."          Mangá: \{manga.getNome()}");
-                System.out.println(STR."           quantidade: \{manga.getQuantidade()}");
+                System.out.println("          Mangá:  " +manga.getNome());
+                System.out.println("          quantidade:  "+manga.getQuantidade());
                 System.out.println("------------------------------------------------------");
             }
         }

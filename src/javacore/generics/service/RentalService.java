@@ -12,14 +12,14 @@ public class RentalService<T> {
     public T buscarVeiculoDisponivel(){
         System.out.println("Buscando veículos disponível");
         T t = veiculosDisponiveis.removeFirst();
-        System.out.println(STR."Alugando veiculo: \{t}");
+        System.out.println("Alugando veiculo: " + t);
         System.out.println("Veículos disponível para alugar");
         System.out.println(veiculosDisponiveis);
         return t;
     }
 
     public void retornarVeiculoAlugado(T t){
-        System.out.println(STR."Devolvendo veiculo: \{t}");
+        System.out.println("Devolvendo veiculo: "+t);
         veiculosDisponiveis.add(t);
         System.out.println("Veículos disponíveis para alugar: ");
         System.out.println(veiculosDisponiveis);

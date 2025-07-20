@@ -22,9 +22,9 @@ public class StreamTest06 {
               noneMatch: if none match the filter condition
          */
 
-        System.out.println(STR."AnyMatch: \{lightNovels.stream().anyMatch(ln -> ln.getPrice() >= 3)}");
-        System.out.println(STR."AllMatch: \{lightNovels.stream().allMatch(lightNovel -> lightNovel.getPrice() > 0)}");
-        System.out.println(STR."NoneMatch: \{lightNovels.stream().noneMatch(lightNovel -> lightNovel.getPrice() < 0)}");
+        System.out.println("AnyMatch: "+lightNovels.stream().anyMatch(ln -> ln.getPrice() >= 3));
+        System.out.println("AllMatch: "+ lightNovels.stream().allMatch(lightNovel -> lightNovel.getPrice() > 0));
+        System.out.println("NoneMatch: "+lightNovels.stream().noneMatch(lightNovel -> lightNovel.getPrice() < 0));
         // findAny returns any element from the stream
         lightNovels.stream().filter(lightNovel -> lightNovel.getPrice()<3).findAny().ifPresent(System.out::println);
         // findFirst returns the first element of the stream

@@ -20,7 +20,7 @@ public class MapTest01 {
         // formas de usar o ‘loop’ para acessar a lista
         for (String key: map.keySet()){
             // via chave e valor
-            System.out.println(STR."Key: \{key} values: \{map.get(key)}");
+            System.out.println("Key: "+ key +" values: "+ map.get(key));
         }
 
         System.out.println("-------------------");
@@ -32,7 +32,7 @@ public class MapTest01 {
         for (Map.Entry<String,String> entry: map.entrySet()){
             // Esse entrySet seria um obj que tem a chave e valor da lista
             // ele faz o mesmo que a primeira forma de ‘loop’
-            System.out.println(STR."Key: \{entry.getKey()}value: \{entry.getValue()}");
+            System.out.println("Key: "+ entry.getKey()+"value:  "+ entry.getValue());
         }
 
 

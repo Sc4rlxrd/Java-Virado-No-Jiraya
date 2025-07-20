@@ -11,14 +11,14 @@ public class BarcoRentavelService {
     public Barco buscarBarcoDisponivel(){
         System.out.println("Buscando barcos disponível");
         Barco barco = barcosDisponiveis.removeFirst();
-        System.out.println(STR."Alugando barcos: \{barco}");
+        System.out.println("Alugando barcos: "+ barco);
         System.out.println("Barcos disponível para alugar");
         System.out.println(barcosDisponiveis);
         return barco;
     }
 
     public void retornarBarcoAlugado(Barco barco){
-        System.out.println(STR."Devolvendo barco: \{barco}");
+        System.out.println("Devolvendo barco: "+ barco);
         barcosDisponiveis.add(barco);
         System.out.println("Barcos disponíveis para alugar: ");
         System.out.println(barcosDisponiveis);

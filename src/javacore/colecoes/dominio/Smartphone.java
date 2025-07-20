@@ -36,7 +36,10 @@ public class Smartphone {
 
     @Override
     public String toString() {
-        return STR."Smartphone{serialNumber='\{serialNumber}', marca='\{marca}'}";
+        return "Smartphone{" +
+                "serialNumber='" + serialNumber + '\'' +
+                ", marca='" + marca + '\'' +
+                '}';
     }
 
     public String getSerialSerial() {

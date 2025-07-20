@@ -12,14 +12,14 @@ public class EmailDeliveryService  implements Runnable{
     @Override
     public void run() {
         String threadName = Thread.currentThread().getName();
-        System.out.println(STR."\{threadName} starting to deliver emails...");
+        System.out.println(threadName +"starting to deliver emails...");
         while (members.isOpen() || members.pendingEmails()>0){
             try {
                 String email = members.retrieveEmail();
                 if(email == null) continue;
-                System.out.println(STR."\{threadName} enviando email para \{email}");
+                System.out.println(threadName+ "enviando email para "+ email);
                 Thread.sleep(2000);
-                System.out.println(STR."\{threadName} enviou email com sucesso \{email}");
+                System.out.println(threadName + "enviou email com sucesso" +email);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

@@ -41,6 +41,10 @@ public class Aluno implements Serializable {
 
     @Override
     public String toString() {
-        return STR."Aluno{id=\{id}, nome='\{nome}', password='\{password}'}";
+        return "Aluno{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

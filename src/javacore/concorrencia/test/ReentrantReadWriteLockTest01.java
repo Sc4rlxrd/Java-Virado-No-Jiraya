@@ -58,7 +58,7 @@ public class ReentrantReadWriteLockTest01 {
             rwl.readLock().lock();
             System.out.println("FINALLY  I GOT THE DAMN LOCK");
             try{
-                System.out.println(STR."\{Thread.currentThread().getName()} \{mapReadWrite.allkeys()}");
+                System.out.println(Thread.currentThread().getName() +" "+ mapReadWrite.allkeys());
             }finally {
                 rwl.readLock().unlock();
             }

@@ -14,11 +14,11 @@ public class ResolveTest01 {
         Path relative = Paths.get("dev");
         Path file = Paths.get("file.txt");
 
-        System.out.println(STR."1: \{absolute.resolve(relative)}");
-        System.out.println(STR."2: \{absolute.resolve(file)}");
-        System.out.println(STR."3: \{relative.resolve(absolute)}");
-        System.out.println(STR."4: \{relative.resolve(file)}");
-        System.out.println(STR."5: \{file.resolve(absolute)}");
-        System.out.println(STR."6: \{file.resolve(relative)}");
+        System.out.println("1: " + absolute.resolve(relative));
+        System.out.println("2: "+ absolute.resolve(file));
+        System.out.println("3: "+ relative.resolve(absolute));
+        System.out.println("4: "+ relative.resolve(file));
+        System.out.println("5: " + file.resolve(absolute));
+        System.out.println("6: "+ file.resolve(relative));
     }
 }

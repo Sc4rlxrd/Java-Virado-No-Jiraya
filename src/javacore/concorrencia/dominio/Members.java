@@ -26,7 +26,7 @@ public class Members {
         lock.lock();
         try {
             String threadName = Thread.currentThread().getName();
-            System.out.println(STR."\{threadName}  Added email to list");
+            System.out.println(threadName + "Added email to list");
             this.emails.add(email);
             condition.signalAll();
         }finally {
@@ -36,12 +36,12 @@ public class Members {
 
     public String retrieveEmail() throws InterruptedException {
         lock.lock();
-        System.out.println(STR."\{Thread.currentThread().getName()} checking if there are emails ");
+        System.out.println(Thread.currentThread().getName() + "checking if there are emails ");
         try {
             while(this.emails.isEmpty()){
                 if(!open) return null;
 
-                System.out.println(STR."\{Thread.currentThread().getName()} There is no email available on the list, entering standby mode . ");
+                System.out.println(Thread.currentThread().getName() + "There is no email available on the list, entering standby mode . ");
                 condition.await();
 
             }
@@ -55,7 +55,7 @@ public class Members {
         open = false;
         lock.lock();
         try {
-            System.out.println(STR."\{Thread.currentThread().getName()}  Notifying everyone that we are not accepting emails. ");
+            System.out.println(Thread.currentThread().getName() + "Notifying everyone that we are not accepting emails. ");
             condition.signalAll();
         }finally {
             lock.unlock();

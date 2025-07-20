@@ -19,7 +19,7 @@ public class Members {
     public void addMemberEmail(String email){
         synchronized (this.emails){
             String threadName = Thread.currentThread().getName();
-            System.out.println(STR."\{threadName}  Adicionou email na lista");
+            System.out.println(threadName  + "Adicionou email na lista");
 
             this.emails.add(email);
             this.emails.notifyAll();
@@ -28,13 +28,13 @@ public class Members {
     }
 
     public String retrieveEmail() throws InterruptedException {
-        System.out.println(STR."\{Thread.currentThread().getName()} checking if there are emails ");
+        System.out.println(Thread.currentThread().getName() +"checking if there are emails ");
 
         synchronized (this.emails){
             while(this.emails.isEmpty()){
                 if(!open) return null;
 
-                System.out.println(STR."\{Thread.currentThread().getName()}  Não tem email disponivel na lista, entrando no modo espera. ");
+                System.out.println(Thread.currentThread().getName()  +"Não tem email disponivel na lista, entrando no modo espera. ");
                 this.emails.wait();
 
             }
@@ -44,7 +44,7 @@ public class Members {
     public void close(){
         open = false;
         synchronized (this.emails){
-            System.out.println(STR."\{Thread.currentThread().getName()}  Notificando todo mundo que não estamos pegando emails. ");
+            System.out.println(Thread.currentThread().getName()  +"Notificando todo mundo que não estamos pegando emails. ");
         }
     }
 }

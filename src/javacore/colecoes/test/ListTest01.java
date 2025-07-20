@@ -16,12 +16,12 @@ public class ListTest01 {
 
         System.out.println("Usando foreach");
         for(String nome:nomes){
-            System.out.println(STR."Nomes:\{nome}");
+            System.out.println("Nomes:  "+nome);
         }
         System.out.println("-----------------------");
         System.out.println("Usando for com índice");
         for(int i = 0; i < nomes.size(); i++) {
-            System.out.println(STR."Nomes: \{nomes.get(i)}");
+            System.out.println("Nomes:    " +nomes.get(i));
         }
         /*
             se precisar criar uma lista de tipo primitivo vai ter que usar os Wrappers do java

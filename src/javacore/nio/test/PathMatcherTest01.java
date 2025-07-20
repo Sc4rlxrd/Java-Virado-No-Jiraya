@@ -23,6 +23,6 @@ public class PathMatcherTest01 {
     }
     private static void matches(Path path, String glob){
         PathMatcher matcher = FileSystems.getDefault().getPathMatcher(glob);
-        System.out.println(STR."\{glob}:\{matcher.matches(path)}");
+        System.out.println(glob+ matcher.matches(path));
     }
 }

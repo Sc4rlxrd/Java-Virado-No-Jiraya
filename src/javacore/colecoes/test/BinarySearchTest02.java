@@ -24,7 +24,7 @@ public class BinarySearchTest02 {
         }
         System.out.println(mangas.size());
         Manga mangaToSearch = new Manga(4L,"Attack on titan",22.0);
-        System.out.println(STR."Posição: \{Collections.binarySearch(mangas, mangaToSearch)}"); // se perdeu porque não tem a acesso ao sort personalizado
-        System.out.println(STR."Posição: \{Collections.binarySearch(mangas, mangaToSearch,mangaByNameComparator)}");
+        System.out.println("Posição: "+ Collections.binarySearch(mangas, mangaToSearch)); // se perdeu porque não tem a acesso ao sort personalizado
+        System.out.println("Posição: "+Collections.binarySearch(mangas, mangaToSearch,mangaByNameComparator));
     }
 }

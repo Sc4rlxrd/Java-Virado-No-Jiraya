@@ -11,14 +11,14 @@ public class CarroRentavelService {
     public Carro buscarCarroDisponivel(){
         System.out.println("Buscando carros disponível");
         Carro carro = carrosDisponiveis.removeFirst();
-        System.out.println(STR."Alugando carro: \{carro}");
+        System.out.println("Alugando carro: "+ carro);
         System.out.println("Carros disponível para alugar");
         System.out.println(carrosDisponiveis);
         return carro;
     }
 
     public void retornarCarroAlugado(Carro carro){
-        System.out.println(STR."Devolvendo carro: \{carro}");
+        System.out.println("Devolvendo carro: "+ carro);
         carrosDisponiveis.add(carro);
         System.out.println("Carros disponíveis para alugar: ");
         System.out.println(carrosDisponiveis);
