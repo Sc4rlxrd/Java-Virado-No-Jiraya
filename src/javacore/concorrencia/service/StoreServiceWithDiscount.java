@@ -34,7 +34,9 @@ public class StoreServiceWithDiscount {
 
     private void delay() {
         try {
-            TimeUnit.SECONDS.sleep(1);
+            // aplicando um tipo de delay parecido com o mundo real onde nem sempre um serviço vai return no mesmo tempo.
+            int milli = ThreadLocalRandom.current().nextInt(200,2500);
+            TimeUnit.MILLISECONDS.sleep(milli);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
