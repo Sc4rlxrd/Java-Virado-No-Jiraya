@@ -8,7 +8,7 @@ public class AircraftTest01 {
         bookSeat("1A");
     }
     private static void bookSeat(String seat){
-        Aircraft aircraft = new Aircraft();
+        Aircraft aircraft = new Aircraft("666");
         System.out.println(aircraft.bookSeat(seat));
     }
 }
