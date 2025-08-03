@@ -13,6 +13,14 @@ public class Person {
         this.email = email;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
@@ -23,11 +31,18 @@ public class Person {
                 '}';
     }
 
-    public static class PersonBuilder {
+    public static final class PersonBuilder {
         private String firstName;
         private String lastName;
         private String username;
         private String email;
+
+        private PersonBuilder() {
+        }
+
+        public static PersonBuilder aPerson() {
+            return new PersonBuilder();
+        }
 
         public PersonBuilder firstName(String firstName) {
             this.firstName = firstName;
@@ -48,8 +63,9 @@ public class Person {
             this.email = email;
             return this;
         }
-        public Person build(){
-            return new Person(firstName,lastName,username,email);
+
+        public Person build() {
+            return new Person(firstName, lastName, username, email);
         }
     }
 }
