@@ -1,0 +1,6 @@
+2025-08-11 21:47:15.342 [main] INFO  javacore.jdbc.repository.ProducerRepository - Inserted producer in the database, rows affected '1'
+2025-08-11 21:49:21.221 [main] INFO  javacore.jdbc.repository.ProducerRepository - Inserted producer in the database, rows affected '1'
+2025-08-11 21:53:07.568 [main] INFO  javacore.jdbc.repository.ProducerRepository - Inserted producer in the database, rows affected '1'
+2025-08-11 22:06:37.012 [main] INFO  javacore.jdbc.repository.ProducerRepository - Inserted producer in the database, rows affected '1'
+2025-08-11 22:06:37.050 [main] INFO  javacore.jdbc.repository.ProducerRepository - Inserted producer in the database, rows affected '1'
+2025-08-11 22:06:37.073 [main] INFO  javacore.jdbc.repository.ProducerRepository - Inserted producer in the database, rows affected '1'

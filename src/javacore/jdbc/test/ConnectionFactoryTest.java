@@ -3,16 +3,19 @@ package javacore.jdbc.test;
 import javacore.jdbc.conn.ConnectionFactory;
 import javacore.jdbc.dominio.Producer;
 import javacore.jdbc.repository.ProducerRepository;
+import lombok.extern.log4j.Log4j2;
+
 
 public class ConnectionFactoryTest {
     public static void main(String[] args) {
-        Producer producer1 = Producer.ProducerBuilder.builder().name("NHK").build();
-        Producer producer2 = Producer.ProducerBuilder.builder().name("WIT STUDIO").build();
-        Producer producer3 = Producer.ProducerBuilder.builder().name("MAPPA").build();
-        Producer producer4= Producer.ProducerBuilder.builder().name("UFOTABLE").build();
-//        ProducerRepository.save(producer1);
+       Producer producer = Producer.builder().name("Studio Deen").build();
+        Producer producer2 = Producer.builder().name("WIT STUDIO").build();
+        Producer producer3 = Producer.builder().name("MAPPA").build();
+        Producer producer4 = Producer.builder().name("UFOTABLE").build();
+        ProducerRepository.save(producer);
         ProducerRepository.save(producer2);
         ProducerRepository.save(producer3);
         ProducerRepository.save(producer4);
+
     }
 }
