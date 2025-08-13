@@ -29,3 +29,7 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### logs ###
+/home/scalxrd/Documentos/Estudos/Java/Java-Virado-No-Jiraya/logs
+/home/scalxrd/Documentos/Estudos/Java/Java-Virado-No-Jiraya/logs/app.log
