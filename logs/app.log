@@ -4,3 +4,69 @@
 2025-08-11 22:06:37.012 [main] INFO  javacore.jdbc.repository.ProducerRepository - Inserted producer in the database, rows affected '1'
 2025-08-11 22:06:37.050 [main] INFO  javacore.jdbc.repository.ProducerRepository - Inserted producer in the database, rows affected '1'
 2025-08-11 22:06:37.073 [main] INFO  javacore.jdbc.repository.ProducerRepository - Inserted producer in the database, rows affected '1'
+2025-08-12 21:32:27.099 [main] INFO  javacore.jdbc.repository.ProducerRepository - Inserted producer 'Studio Deen' in the database, rows affected '1'
+2025-08-12 21:32:27.130 [main] INFO  javacore.jdbc.repository.ProducerRepository - Inserted producer 'WIT STUDIO' in the database, rows affected '1'
+2025-08-12 21:32:27.151 [main] INFO  javacore.jdbc.repository.ProducerRepository - Inserted producer 'MAPPA' in the database, rows affected '1'
+2025-08-12 21:39:03.601 [main] ERROR javacore.jdbc.repository.ProducerRepository - Error while trying to insert producer '21'
+java.sql.SQLSyntaxErrorException: Unknown column '21' in 'where clause'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1499)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2321)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1369)
+	at javacore.jdbc.repository.ProducerRepository.delete(ProducerRepository.java:28)
+	at javacore.jdbc.service.ProducerService.delete(ProducerService.java:14)
+	at javacore.jdbc.test.ConnectionFactoryTest.main(ConnectionFactoryTest.java:18)
+2025-08-12 21:39:03.624 [main] ERROR javacore.jdbc.repository.ProducerRepository - Error while trying to insert producer '22'
+java.sql.SQLSyntaxErrorException: Unknown column '22' in 'where clause'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1499)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2321)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1369)
+	at javacore.jdbc.repository.ProducerRepository.delete(ProducerRepository.java:28)
+	at javacore.jdbc.service.ProducerService.delete(ProducerService.java:14)
+	at javacore.jdbc.test.ConnectionFactoryTest.main(ConnectionFactoryTest.java:19)
+2025-08-12 21:39:03.642 [main] ERROR javacore.jdbc.repository.ProducerRepository - Error while trying to insert producer '23'
+java.sql.SQLSyntaxErrorException: Unknown column '23' in 'where clause'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1499)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2321)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1369)
+	at javacore.jdbc.repository.ProducerRepository.delete(ProducerRepository.java:28)
+	at javacore.jdbc.service.ProducerService.delete(ProducerService.java:14)
+	at javacore.jdbc.test.ConnectionFactoryTest.main(ConnectionFactoryTest.java:20)
+2025-08-12 21:41:49.493 [main] ERROR javacore.jdbc.repository.ProducerRepository - Error while trying to insert producer '21'
+java.sql.SQLSyntaxErrorException: Unknown column '21' in 'where clause'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1499)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2321)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1369)
+	at javacore.jdbc.repository.ProducerRepository.delete(ProducerRepository.java:28)
+	at javacore.jdbc.service.ProducerService.delete(ProducerService.java:14)
+	at javacore.jdbc.test.ConnectionFactoryTest.main(ConnectionFactoryTest.java:18)
+2025-08-12 21:41:49.517 [main] ERROR javacore.jdbc.repository.ProducerRepository - Error while trying to insert producer '22'
+java.sql.SQLSyntaxErrorException: Unknown column '22' in 'where clause'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1499)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2321)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1369)
+	at javacore.jdbc.repository.ProducerRepository.delete(ProducerRepository.java:28)
+	at javacore.jdbc.service.ProducerService.delete(ProducerService.java:14)
+	at javacore.jdbc.test.ConnectionFactoryTest.main(ConnectionFactoryTest.java:19)
+2025-08-12 21:41:49.534 [main] ERROR javacore.jdbc.repository.ProducerRepository - Error while trying to insert producer '23'
+java.sql.SQLSyntaxErrorException: Unknown column '23' in 'where clause'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1499)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2321)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1369)
+	at javacore.jdbc.repository.ProducerRepository.delete(ProducerRepository.java:28)
+	at javacore.jdbc.service.ProducerService.delete(ProducerService.java:14)
+	at javacore.jdbc.test.ConnectionFactoryTest.main(ConnectionFactoryTest.java:20)
+2025-08-12 21:43:03.216 [main] INFO  javacore.jdbc.repository.ProducerRepository - Delete producer '21' from the database, rows affected '1'
+2025-08-12 21:43:03.250 [main] INFO  javacore.jdbc.repository.ProducerRepository - Delete producer '22' from the database, rows affected '1'
+2025-08-12 21:43:03.273 [main] INFO  javacore.jdbc.repository.ProducerRepository - Delete producer '23' from the database, rows affected '1'
