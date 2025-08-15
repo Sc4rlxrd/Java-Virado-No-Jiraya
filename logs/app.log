@@ -73,3 +73,6 @@ java.sql.SQLSyntaxErrorException: Unknown column '23' in 'where clause'
 2025-08-12 22:12:50.758 [main] INFO  javacore.jdbc.repository.ProducerRepository - Inserted producer 'Studio Deen' in the database, rows affected '1'
 2025-08-12 22:13:13.796 [main] INFO  javacore.jdbc.repository.ProducerRepository - Inserted producer 'WIT STUDIO' in the database, rows affected '1'
 2025-08-12 22:17:34.924 [main] INFO  javacore.jdbc.repository.ProducerRepository - Updated producer '24' , rows affected '1'
+2025-08-14 21:40:47.591 [main] INFO  javacore.jdbc.repository.ProducerRepository - Finding all Producers
+2025-08-14 21:42:42.962 [main] INFO  javacore.jdbc.repository.ProducerRepository - Finding all Producers
+2025-08-14 21:42:43.368 [main] INFO  javacore.jdbc.test.ConnectionFactoryTest - Producers: '[Producer(id=24, name=MAPPA ), Producer(id=25, name=WIT STUDIO)]'
