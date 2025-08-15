@@ -13,8 +13,9 @@ public class ConnectionFactoryTest {
 //        ProducerService.save(producer2);
 //        ProducerService.delete(21);
 //        ProducerService.update(toUpdate);
-        var producers = ProducerService.findAll();
-        log.info("Producers: '{}'", producers);
+//        var producersFindAll = ProducerService.findAll();
+        var producersFindByName = ProducerService.findByName("MAPPA");
+        log.info("Producers: '{}'", producersFindByName);
 
 
     }
