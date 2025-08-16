@@ -14,9 +14,10 @@ public class ConnectionFactoryTest {
 //        ProducerService.delete(21);
 //        ProducerService.update(toUpdate);
 //        var producersFindAll = ProducerService.findAll();
-        var producersFindByName = ProducerService.findByName("MAPPA");
-        log.info("Producers: '{}'", producersFindByName);
-
+//        var producersFindByName = ProducerService.findByName("MAPPA");
+//        log.info("Producers: '{}'", producersFindByName);
+//        ProducerService.showProducerMetaData();
+        ProducerService.showDriverMetaData();
 
     }
 }
