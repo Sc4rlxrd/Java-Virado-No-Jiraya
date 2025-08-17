@@ -7,10 +7,10 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 public class ConnectionFactoryTest {
     public static void main(String[] args) {
-        Producer producer = Producer.builder().name("Studio Deen").build();
+        Producer producer = Producer.builder().name("Toei Animation").build();
         Producer producer2 = Producer.builder().name("WIT STUDIO").build();
         Producer toUpdate = Producer.builder().id(24).name("MAPPA").build();
-//        ProducerService.save(producer2);
+//        ProducerService.save(producer);
 //        ProducerService.delete(21);
 //        ProducerService.update(toUpdate);
 //        var producersFindAll = ProducerService.findAll();
@@ -18,6 +18,9 @@ public class ConnectionFactoryTest {
 //        log.info("Producers: '{}'", producersFindByName);
 //        ProducerService.showProducerMetaData();
 //        ProducerService.showDriverMetaData();
-        ProducerService.showTypeScrollWorking();
+//        ProducerService.showTypeScrollWorking();
+        var producerFindByNameAndToUpperCase = ProducerService.findByNameAndToUpperCase("Toei");
+        log.info("Producer : '{}'", producerFindByNameAndToUpperCase);
+
     }
 }

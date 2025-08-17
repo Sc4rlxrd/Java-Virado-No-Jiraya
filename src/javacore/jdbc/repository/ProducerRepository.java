@@ -10,8 +10,8 @@ import java.util.List;
 
 @Log4j2
 public class ProducerRepository {
-    // o para executar qualquer codigo sql lembrar de sempre criar um  Statement e usar o metodo execute.
-    // O ResultSet encapsula os dados retornados pela consulta SQL em um formato que pode ser manipulado pela aplicação Java
+    // O para executar qualquer código sql lembrar de sempre criar um Statement e usar o metodo execute.
+    // O ResultSet encapsula os dados retornados pela consulta SQL num formato que pode ser manipulado pela aplicação Java
 
     public static void save(Producer producer) {
         log.info("Creating producer");
@@ -179,4 +179,28 @@ public class ProducerRepository {
             log.error("Error when playing showing scroll type working. ", e);
         }
     }
+
+    public static List<Producer> findByNameAndToUpperCase(String name) {
+        log.info("Updating the offered name to uppercase.");
+        String sql = "SELECT * FROM anime_store . producer where name like '%%%s%%';".formatted(name);
+        List<Producer> producers = new ArrayList<>();
+        try (Connection conn = ConnectionFactory.getConnection();
+             Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
+             ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                // Lembrando que o resultset salva tudo que traz na memória.
+                // Obs. Sempre que usar o updateString ou ‘update’ alguma coisa atualizar a célula/ row.
+                // Caso esqueça de atualizar a row ele sempre vai retornar o valor antigo da row.
+                // toLowerCase funciona da mesma forma que toUpperCase.
+                rs.updateString("name", rs.getString("name").toUpperCase());
+                rs.updateRow();
+                Producer producer = Producer.builder().id(rs.getInt("id")).name(rs.getString("name")).build();
+                producers.add(producer);
+            }
+        } catch (SQLException e) {
+            log.error("Error while trying to find producer by name ", e);
+        }
+        return producers;
+    }
+
 }

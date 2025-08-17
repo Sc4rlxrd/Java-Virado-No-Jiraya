@@ -32,6 +32,9 @@ public class ProducerService {
     public static void showTypeScrollWorking(){
         ProducerRepository.showTypeScrollWorking();
     }
+    public static List<Producer> findByNameAndToUpperCase(String name){
+        return ProducerRepository.findByNameAndToUpperCase(name);
+    }
     private static void requireValid(Integer id){
         if (id == null || id<=0){
             throw new IllegalArgumentException("Invalid value for id");
