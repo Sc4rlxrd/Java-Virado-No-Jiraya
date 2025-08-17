@@ -17,7 +17,7 @@ public class ConnectionFactoryTest {
 //        var producersFindByName = ProducerService.findByName("MAPPA");
 //        log.info("Producers: '{}'", producersFindByName);
 //        ProducerService.showProducerMetaData();
-        ProducerService.showDriverMetaData();
-
+//        ProducerService.showDriverMetaData();
+        ProducerService.showTypeScrollWorking();
     }
 }
