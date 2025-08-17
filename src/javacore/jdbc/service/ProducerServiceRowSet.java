@@ -1,0 +1,15 @@
+package javacore.jdbc.service;
+
+import javacore.jdbc.dominio.Producer;
+import javacore.jdbc.repository.ProducerRepositoryRowSet;
+
+import java.util.List;
+
+public class ProducerServiceRowSet {
+    public static List<Producer> findByNameJdbcRowSet(String name){
+        return ProducerRepositoryRowSet.findByNameJdbcRowSet(name);
+    }
+    public static List<Producer> findAll(){
+        return ProducerRepositoryRowSet.findAll();
+    }
+}
