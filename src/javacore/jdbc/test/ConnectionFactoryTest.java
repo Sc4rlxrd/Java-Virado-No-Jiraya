@@ -19,8 +19,10 @@ public class ConnectionFactoryTest {
 //        ProducerService.showProducerMetaData();
 //        ProducerService.showDriverMetaData();
 //        ProducerService.showTypeScrollWorking();
-        var producerFindByNameAndToUpperCase = ProducerService.findByNameAndToUpperCase("Toei");
-        log.info("Producer : '{}'", producerFindByNameAndToUpperCase);
+//        var producerFindByNameAndToUpperCase = ProducerService.findByNameAndToUpperCase("Toei");
+        var findByNameAndInsertWhenNotFound = ProducerService.findByNameAndInsertWhenNotFound("Ufotable");
+        ProducerService.findByNameAndDelete("ufot");
+        log.info("Producer : '{}'", findByNameAndInsertWhenNotFound);
 
     }
 }

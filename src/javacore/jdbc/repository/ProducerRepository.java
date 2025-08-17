@@ -202,5 +202,41 @@ public class ProducerRepository {
         }
         return producers;
     }
-
+    public static void findByNameAndDelete(String name) {
+        log.info("Finding Producer to deleting");
+        String sql = "SELECT * FROM anime_store . producer where name like '%%%s%%';".formatted(name);
+        List<Producer> producers = new ArrayList<>();
+        try (Connection conn = ConnectionFactory.getConnection();
+             Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
+             ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                log.info("Deleting '{}'", rs.getString("name"));
+                rs.deleteRow();
+                // o deleteRow não precisar de persistência de dados.
+            }
+        } catch (SQLException e) {
+            log.error("Error while trying to find producer by name ", e);
+        }
+    }
+    public static List<Producer> findByNameAndInsertWhenNotFound(String name) {
+        log.info("Finding Producer ");
+        String sql = "SELECT * FROM anime_store . producer where name like '%%%s%%';".formatted(name);
+        List<Producer> producers = new ArrayList<>();
+        try (Connection conn = ConnectionFactory.getConnection();
+             Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
+             ResultSet rs = stmt.executeQuery(sql)) {
+            if (!rs.next()) {
+                rs.moveToInsertRow();
+                rs.updateString("name",name);
+                rs.insertRow();
+                rs.beforeFirst();
+                rs.next();
+                Producer producer = Producer.builder().id(rs.getInt("id")).name(rs.getString("name")).build();
+                producers.add(producer);
+            }
+        } catch (SQLException e) {
+            log.error("Error while trying to find producer by name ", e);
+        }
+        return findByNameAndToUpperCase(name);
+    }
 }
