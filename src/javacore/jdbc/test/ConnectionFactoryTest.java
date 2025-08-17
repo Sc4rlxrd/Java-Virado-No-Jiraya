@@ -4,6 +4,8 @@ import javacore.jdbc.dominio.Producer;
 import javacore.jdbc.service.ProducerService;
 import lombok.extern.log4j.Log4j2;
 
+import java.util.List;
+
 @Log4j2
 public class ConnectionFactoryTest {
     public static void main(String[] args) {
@@ -28,8 +30,9 @@ public class ConnectionFactoryTest {
 
         // Usando o PreparedStatement ele meio que inibe o sql injection
         var producerFindByNamePreparedStatement = ProducerService.findByNamePreparedStatement("STUD");
-        log.info("Producer : '{}'", producerFindByNamePreparedStatement);
         ProducerService.updatePreparedStatement(toUpdate);
+        var findByNameCallableStatement = ProducerService.findByNameCallableStatement("uf");
+        log.info("Producer : '{}'", findByNameCallableStatement);
 
     }
 }

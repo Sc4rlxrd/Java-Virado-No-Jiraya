@@ -271,18 +271,43 @@ public class ProducerRepository {
     public static void updatePreparedStatement(Producer producer) {
         log.info("Update Prepared Statement ");
         try (Connection conn = ConnectionFactory.getConnection();
-             PreparedStatement ps = createdPreparedStatementUpdate(conn,producer);) {
+             PreparedStatement ps = createdPreparedStatementUpdate(conn, producer);) {
             int rowsAffected = ps.executeUpdate();
             log.info("Update producer '{}' , rows affected '{}'", producer.getId(), rowsAffected);
         } catch (SQLException e) {
             log.error("Error while trying to update producer '{}'", producer.getId(), e);
         }
     }
+
     private static PreparedStatement createdPreparedStatementUpdate(Connection conn, Producer producer) throws SQLException {
         String sql = "UPDATE `anime_store`.`producer` SET `name` = ? WHERE (`id` = ?);";
         PreparedStatement ps = conn.prepareStatement(sql);
         ps.setString(1, producer.getName());
         ps.setInt(2, producer.getId());
         return ps;
+    }
+
+    public static List<Producer> findByNameCallableStatement(String name) {
+        log.info("Find By Name CallableStatement");
+        List<Producer> producers = new ArrayList<>();
+        try (Connection coon = ConnectionFactory.getConnection();
+             PreparedStatement ps = callableStatementFindByName(coon, name);
+             ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
+                Producer producer = Producer.builder().id(rs.getInt("id")).name(rs.getString("name")).build();
+                producers.add(producer);
+            }
+
+        } catch (SQLException e) {
+            log.info("Error executing find By Name Callable Statement. ", e);
+        }
+        return producers;
+    }
+
+    private static CallableStatement callableStatementFindByName(Connection conn, String name) throws SQLException {
+        String sql = "CALL `anime_store`.`sp_get_producer_by_name`(?);";
+        CallableStatement cs = conn.prepareCall(sql);
+        cs.setString(1, String.format("%%%s%%", name));
+        return cs;
     }
 }

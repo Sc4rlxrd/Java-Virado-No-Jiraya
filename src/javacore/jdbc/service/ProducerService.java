@@ -60,7 +60,9 @@ public class ProducerService {
         requireValid(producer.getId());
         ProducerRepository.updatePreparedStatement(producer);
     }
-
+    public static List<Producer> findByNameCallableStatement(String name) {
+        return ProducerRepository.findByNameCallableStatement(name);
+    }
 
     private static void requireValid(Integer id) {
         if (id == null || id <= 0) {
