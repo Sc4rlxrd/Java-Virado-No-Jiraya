@@ -12,4 +12,7 @@ public class ProducerServiceRowSet {
     public static List<Producer> findAll(){
         return ProducerRepositoryRowSet.findAll();
     }
+    public static void updateJdbcRowSet(Producer producer){
+        ProducerRepositoryRowSet.updateJdbcRowSet(producer);
+    }
 }

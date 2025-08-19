@@ -2,10 +2,8 @@ package javacore.jdbc.repository;
 
 import javacore.jdbc.conn.ConnectionFactory;
 import javacore.jdbc.dominio.Producer;
+import javacore.jdbc.listener.CustomRowSetListener;
 import lombok.extern.log4j.Log4j2;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import javax.sql.rowset.JdbcRowSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -18,6 +16,7 @@ public class ProducerRepositoryRowSet {
         String sql = "SELECT * FROM anime_store.producer where name like ?;";
         List<Producer> producers = new ArrayList<>();
         try (JdbcRowSet jrs = ConnectionFactory.getJdbcRowSet()) {
+            jrs.addRowSetListener(new CustomRowSetListener());
             jrs.setCommand(sql);
             // essa parte melhorou porque não precisar criar outro metodo para transaformar  ? no valor oferecido na classe main
             jrs.setString(1, String.format("%%%s%%", name));
@@ -46,5 +45,20 @@ public class ProducerRepositoryRowSet {
             log.info("Erro ", e);
         }
         return producers;
+    }
+    public static void updateJdbcRowSet(Producer producer){
+        String sql = "SELECT * FROM anime_store.producer WHERE (`id` = ?);";
+        try (JdbcRowSet jrs = ConnectionFactory.getJdbcRowSet()){
+            // RowSetListener serve para ter mais informações de rowset sobrescrevendo três metodos
+            jrs.addRowSetListener(new CustomRowSetListener());
+            jrs.setCommand(sql);
+            jrs.setInt(1, producer.getId());
+            jrs.execute();
+            if (!jrs.next()) return;
+            jrs.updateString("name", producer.getName());
+            jrs.updateRow();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
