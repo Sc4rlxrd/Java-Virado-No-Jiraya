@@ -12,7 +12,7 @@ public class ConnectionFactoryTest02 {
         //OBS. os mesmo comandos sql usado na classe producerRepository usando o Statement, ResultSet funciona no RowSet.
         //List<Producer> producers = ProducerServiceRowSet.findAll();
         Producer toUpdate = Producer.builder().id(24).name("MAPPA").build();
-        ProducerServiceRowSet.updateJdbcRowSet(toUpdate);
+        ProducerServiceRowSet.updateCachedRowSet(toUpdate);
         log.info("----------------------");
         List<Producer> producers = ProducerServiceRowSet.findByNameJdbcRowSet("");
         log.info("Producer: '{}'", producers);

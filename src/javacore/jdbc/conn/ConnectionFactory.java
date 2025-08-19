@@ -1,5 +1,6 @@
 package javacore.jdbc.conn;
 
+import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.JdbcRowSet;
 import javax.sql.rowset.RowSetProvider;
 import java.sql.Connection;
@@ -25,6 +26,10 @@ public class ConnectionFactory {
         jdbcRowSet.setUsername(username);
         jdbcRowSet.setPassword(password);
         return  jdbcRowSet;
+    }
+    // ele não ficar conectado no banco, sempre que fazer uma mudança você precisa mandar para o banco de novo
+    public static CachedRowSet getCacheRowSet() throws SQLException {
+        return RowSetProvider.newFactory().createCachedRowSet();
     }
 
 
