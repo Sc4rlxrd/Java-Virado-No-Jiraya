@@ -63,6 +63,9 @@ public class ProducerService {
     public static List<Producer> findByNameCallableStatement(String name) {
         return ProducerRepository.findByNameCallableStatement(name);
     }
+    public static void saveTransaction(List<Producer>producers){
+        ProducerRepository.saveTransaction(producers);
+    }
 
     private static void requireValid(Integer id) {
         if (id == null || id <= 0) {

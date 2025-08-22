@@ -310,4 +310,35 @@ public class ProducerRepository {
         cs.setString(1, String.format("%%%s%%", name));
         return cs;
     }
+
+    public static void saveTransaction(List<Producer>producers){
+        try (Connection connection = ConnectionFactory.getConnection()){
+            connection.setAutoCommit(false); // fazer ele não fazer commit automatic
+            preparedStatementSaveTransaction(connection,producers);
+            connection.commit(); // lança as modificações para o banco
+        } catch (SQLException e) {
+            log.info("Erro while trying to save producers '{}'",producers,e);
+        }
+    }
+
+    private static void preparedStatementSaveTransaction(Connection conn,List<Producer> producers) throws SQLException {
+        String sql="INSERT INTO `anime_store`.`producer` (`name`) VALUES (?);";
+        boolean shouldRollback = false;
+        for(Producer p:producers){
+            try(PreparedStatement ps = conn.prepareStatement(sql)) {
+                log.info("Saving producer '{}'", p.getName());
+                ps.setString(1, p.getName());
+                // tentando forçar um rollback
+                if(p.getName().equals("Toei Animation")) throw new SQLException("Can't save Toei Animation"); // funcionou
+                ps.execute();
+            } catch (SQLException e) {
+                e.printStackTrace();
+                shouldRollback = true;
+            }
+        }
+        if (shouldRollback){
+            log.warn("Transaction is going be rollback");
+            conn.rollback();
+        }
+    }
 }
