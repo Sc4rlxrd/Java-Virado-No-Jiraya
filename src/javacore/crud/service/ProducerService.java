@@ -4,6 +4,7 @@ import javacore.crud.dominio.Producer;
 import javacore.crud.repository.ProducerRepository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class ProducerService {
@@ -14,6 +15,7 @@ public class ProducerService {
             case 1: findByName(); break;
             case 2: delete(); break;
             case 3: save(); break;
+            case 4: update(); break;
             default: throw  new IllegalArgumentException("Not a valid option");
         }
     }
@@ -41,5 +43,19 @@ public class ProducerService {
         Producer producer = Producer.builder().name(name).build();
         ProducerRepository.save(producer);
     }
-
+    public static void update(){
+        System.out.println("Type the id of the object you want to update");
+        Optional<Producer> producerOptional = ProducerRepository.findById(Integer.parseInt(scanner.nextLine()));
+        if (producerOptional.isEmpty()){
+            System.out.println("Producer not found");
+            return;
+        }
+        Producer producerFromDb = producerOptional.get();
+        System.out.println("Producer found "  + producerFromDb.getName());
+        System.out.println("Type the new name or enter to keep the same");
+        String name = scanner.nextLine();
+        name = name.isEmpty() ? producerFromDb.getName() : name;
+        var producerToUpdate = Producer.builder().id(producerFromDb.getId()).name(name).build();
+        ProducerRepository.update(producerToUpdate);
+    }
 }
